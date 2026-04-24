@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GD Consultancy</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#0f172a;color:#fff;overflow-x:hidden}
+
+header{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;background:rgba(255,255,255,0.05);backdrop-filter:blur(10px);position:sticky;top:0;z-index:1000}
+.logo{height:50px}
+nav a{margin:0 10px;text-decoration:none;color:#fff;font-size:14px}
+
+.hero{padding:120px 20px;text-align:center;background:radial-gradient(circle at top,#1e293b,#020617)}
+.hero h1{font-size:2.2rem;font-weight:700}
+.hero p{margin:15px 0;color:#cbd5e1}
+
+.btn{background:#c9a227;color:#000;padding:12px 25px;border:none;border-radius:30px;font-weight:600;cursor:pointer;transition:.3s}
+.btn:hover{transform:scale(1.05)}
+
+section{padding:60px 20px}
+h2{text-align:center;margin-bottom:25px}
+
+.grid{display:grid;grid-template-columns:1fr;gap:15px}
+.card{background:rgba(255,255,255,0.05);padding:18px;border-radius:15px;backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.1);transition:.3s}
+.card:hover{transform:translateY(-6px)}
+.card h3{color:#c9a227}
+
+.badge{background:#c9a227;color:#000;padding:5px 10px;border-radius:20px;font-size:12px;display:inline-block;margin-bottom:10px}
+
+.testimonial{background:rgba(255,255,255,0.05);padding:15px;border-radius:12px}
+
+form{display:flex;flex-direction:column;gap:10px}
+input,textarea{padding:12px;border:none;border-radius:8px}
+
+footer{text-align:center;padding:20px;background:#020617;color:#94a3b8}
+
+.whatsapp{position:fixed;bottom:20px;right:20px;background:#25D366;color:white;padding:15px;border-radius:50%;font-size:20px;text-decoration:none}
+
+.fade{opacity:0;transform:translateY(30px);transition:0.8s}
+.fade.show{opacity:1;transform:translateY(0)}
+
+@media(min-width:768px){
+.hero h1{font-size:3rem}
+.grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(min-width:1024px){
+.grid{grid-template-columns:repeat(3,1fr)}
+}
+.logo{
+  height:60px;
+}
+
+@media(min-width:768px){
+  .logo{
+    height:80px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<img src="GD.png" class="logo">
+<nav>
+<a href="#">Home</a>
+<a href="#courses">Courses</a>
+<a href="#contact">Contact</a>
+<a href="#about">About GD Consultancy</a>
+</nav>
+</header>
+
+<div class="hero fade">
+<h1>Admissions Open 2026</h1>
+<p>Bangalore • Chennai • Hyderabad • Punjab • AP</p>
+<button class="btn" onclick="scrollToSection('contact')">Get Free Consultation</button>
+</div>
+
+<section class="fade">
+<h2>Why Choose Us</h2>
+<div class="grid">
+<div class="card"><span class="badge">Trusted</span><h3>100% Guidance</h3><p>Complete admission support</p></div>
+<div class="card"><span class="badge">Fast</span><h3>Quick Process</h3><p>No delays in admissions</p></div>
+<div class="card"><span class="badge">Top Colleges</span><h3>Best Network</h3><p>Access to top universities</p></div>
+</div>
+</section>
+
+<section class="fade" id="about">
+<h2>About GD Consultancy</h2>
+<p style="max-width:700px;margin:auto;text-align:center;color:#cbd5e1;font-size:15px;line-height:1.7">
+GD Consultancy is a trusted education guidance service helping students secure admissions in top colleges across India. We specialize in simplifying the admission process by providing clear guidance, personalized counseling, and complete support from start to finish.
+<br><br>
+Our team understands that choosing the right course and college is one of the most important decisions in a student’s life. That’s why we focus on understanding your goals, budget, and interests before suggesting the best options.
+<br><br>
+From course selection to application assistance and final admission, we ensure a smooth, fast, and stress-free experience. Our mission is to help every student build a successful future with the right education path.
+</p>
+</section>
+
+<section id="courses" class="fade">
+<h2>Popular Courses</h2>
+<div class="grid">
+<div class="card"><h3>B.Tech</h3><p>Engineering</p><button class="btn" onclick="scrollToSection('contact')">Apply</button></div>
+<div class="card"><h3>MBA</h3><p>Management</p><button class="btn" onclick="scrollToSection('contact')">Apply</button></div>
+<div class="card"><h3>BBA</h3><p>Business</p><button class="btn" onclick="scrollToSection('contact')">Apply</button></div>
+<div class="card"><h3>LLB</h3><p>Law</p><button class="btn" onclick="scrollToSection('contact')">Apply</button></div>
+<div class="card"><h3>M.Tech</h3><p>Advanced</p><button class="btn" onclick="scrollToSection('contact')">Apply</button></div>
+<div class="card"><h3>Aeronautical</h3><p>Aviation</p><button class="btn" onclick="scrollToSection('contact')">Apply</button></div>
+</div>
+</section>
+
+<section class="fade">
+<h2>Student Results</h2>
+<div class="grid">
+<div class="testimonial">"Got admission in top college"</div>
+<div class="testimonial">"Very fast & trusted"</div>
+<div class="testimonial">"Best consultancy"</div>
+</div>
+</section>
+
+<section id="contact" class="fade">
+<h2>Contact Now</h2>
+<form onsubmit="sendToWhatsApp(event)">
+<input type="text" placeholder="Your Name" required>
+<input type="tel" placeholder="Your Number" required>
+<input type="tel" placeholder="Your EMAIL" required>
+<textarea placeholder="Your Message" required></textarea>
+<button class="btn">Send</button>
+</form>
+</section>
+
+<footer>
+<p>© 2026 GD Consultancy</p>
+</footer>
+
+<a href="https://wa.me/919390127363" class="whatsapp">💬</a>
+
+<script>
+function scrollToSection(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
+
+function sendToWhatsApp(e){
+e.preventDefault();
+let name=document.querySelector('input').value;
+let phoneInput=document.querySelector('input[type="tel"]').value;
+let message=document.querySelector('textarea').value;
+let phone="919390127363";
+let url=`https://wa.me/${phone}?text=Name:${name}%0APhone:${phoneInput}%0AMessage:${message}`;
+window.open(url,'_blank');
+}
+
+const els=document.querySelectorAll('.fade');
+window.addEventListener('scroll',()=>{
+els.forEach(el=>{
+if(el.getBoundingClientRect().top<window.innerHeight-50){el.classList.add('show')}
+})
+});
+</script>
+
+</body>
+</html>
